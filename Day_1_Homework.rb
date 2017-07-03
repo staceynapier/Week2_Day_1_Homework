@@ -20,4 +20,9 @@ class Student
   def change_cohort(cohort)
     @cohort = cohort
   end
+
+  def student_talking
+    return "I can talk!"
+  end
+
 end 
