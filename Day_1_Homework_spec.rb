@@ -64,10 +64,31 @@ class TestStudent < MiniTest::Test
 
   end
 
-
-
-
-
-
 end
 
+class TestLibrary < MiniTest::Test
+
+  def setup
+    @new_library = Library.new([
+    {
+      title: "the_hobbit", 
+      rental_details: {
+        student_name: "Chris",
+        date: "05/04/17"
+      },
+    },
+    {
+      title: "forgotten_world", 
+      rental_detail: {
+        student_name: "John", 
+        date: "06/07/94"
+      }
+    }])
+
+  end
+
+  def test_book_summary()
+    assert_equal("the_hobbit loaned to Chris on 05/04/17. forgotten_world loaned to John on 06/07/94", @new_library.get_all())
+  end 
+
+end

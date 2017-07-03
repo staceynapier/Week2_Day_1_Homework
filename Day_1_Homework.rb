@@ -56,3 +56,13 @@ class Team
     @points += 1 if outcome.downcase() == "won"
   end
 end
+
+class Library
+
+  def initialize(books)
+    @books = books
+
+  end
+
+
+end
