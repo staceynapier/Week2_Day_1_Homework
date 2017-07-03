@@ -64,5 +64,13 @@ class Library
 
   end
 
+  def get_all()
+    book_str = ''
+    @books.each do |book|
+      book_str += book[:title] + " loaned to #{book[:rental_details][:student_name]} on #{book[:rental_details][:date]}." 
+
+    end
+    return book_str
+  end
 
 end

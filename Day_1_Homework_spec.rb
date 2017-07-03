@@ -79,7 +79,7 @@ class TestLibrary < MiniTest::Test
     },
     {
       title: "forgotten_world", 
-      rental_detail: {
+      rental_details: {
         student_name: "John", 
         date: "06/07/94"
       }
@@ -88,7 +88,7 @@ class TestLibrary < MiniTest::Test
   end
 
   def test_book_summary()
-    assert_equal("the_hobbit loaned to Chris on 05/04/17. forgotten_world loaned to John on 06/07/94", @new_library.get_all())
+    assert_equal("the_hobbit loaned to Chris on 05/04/17.forgotten_world loaned to John on 06/07/94.", @new_library.get_all())
   end 
 
 end
