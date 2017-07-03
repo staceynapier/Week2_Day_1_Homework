@@ -31,27 +31,35 @@ class TestStudent < MiniTest::Test
   end
 
   def test_team()
-    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith", 0)
     assert_equal("Cohort 14", new_team.team_name())
   end
 
   def test_change_coach()
-    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith", 0)
     new_team.coach = "Alex"
     assert_equal("Alex", new_team.coach)
   end
 
   def test_add_new_player()
-    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith", 0)
     new_team.add_new_player("Tracy")
     assert_equal(["Chris", "Stacey", "Tracy"], new_team.players)
-
   end
 
+  def test_is_player_in_team()
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith", 0)
+    assert_equal(false, new_team.is_player_in_team("Del"))
+  end
 
+  def test_points_total()
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith", 0)
+    assert_equal(0, new_team.points_total)
+  end
 
-
-
-
+  def test_add_to_points
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith", 0)
+    assert_equal(5, new_team.add_to_points_total(5))
+  end
 end
 
