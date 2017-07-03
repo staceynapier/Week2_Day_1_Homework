@@ -52,7 +52,16 @@ class TestStudent < MiniTest::Test
     new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
     assert_equal(true, new_team.check_player_name?("Stacey"))
     assert_equal(false, new_team.check_player_name?("Daniel"))
-    
+
+  end
+
+  def test_match_outcome()
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
+    new_team.outcome("won")
+    assert_equal(1, new_team.points())
+    new_team.outcome("loss")
+    assert_equal(1, new_team.points())
+
   end
 
 

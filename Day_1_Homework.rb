@@ -52,4 +52,7 @@ class Team
     return false
   end
 
+  def outcome(outcome)
+    @points += 1 if outcome.downcase() == "won"
+  end
 end
