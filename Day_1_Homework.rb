@@ -94,7 +94,9 @@ class Library
     }
   end
 
-  def change_rental(title)
+  def find_book_rental(title)
+    book = find_book(title)
+    return "#{book[:rental_details][:student_name]} on #{book[:rental_details][:date]} "
   end
 
 end
