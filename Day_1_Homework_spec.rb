@@ -35,6 +35,12 @@ class TestStudent < MiniTest::Test
     assert_equal("Cohort 14", new_team.get_team_name())
   end
 
+  def test_change_coach()
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
+    new_team.change_coach("Alex")
+    assert_equal("Alex", new_team.get_coach)
+  end
+
 
 
 
