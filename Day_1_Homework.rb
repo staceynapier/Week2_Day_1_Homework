@@ -59,6 +59,8 @@ end
 
 class Library
 
+  attr_accessor :books
+
   def initialize(books)
     @books = books
 
@@ -76,6 +78,16 @@ class Library
       book_str += book[:title] + " loaned to #{book[:rental_details][:student_name]} on #{book[:rental_details][:date]}." 
     end
     return book_str
+  end
+
+  def add_new_book(title)
+    @books <<     {
+      title: title, 
+      rental_details: {
+        student_name: "",
+        date: ""
+      }
+    }
   end
 
 end
