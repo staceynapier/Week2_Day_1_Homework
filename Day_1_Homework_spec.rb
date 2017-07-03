@@ -103,9 +103,10 @@ class TestLibrary < MiniTest::Test
   def find_book_rental()
     assert_equal("John on 06/07/94", @new_library.find_book_rental('forgotten_world'))
   end
-  # def test_change_rental()
-  #   @new_library.change_rental("the_hobbit", "Chris, 05/04/17")
-  #   assert_equal("the_hobbit loaned to John on 06/04/17.", @new_library.get_all_or_find_book('the_hobbit'))
-  # end
+
+  def test_change_rental()
+    @new_library.change_rental("the_hobbit", "Alex", "06/04/17")
+    assert_equal("the_hobbit loaned to Alex on 06/04/17.", @new_library.get_all_or_find_book('the_hobbit'))
+  end
 
 end
