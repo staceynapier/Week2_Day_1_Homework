@@ -51,6 +51,8 @@ class TestStudent < MiniTest::Test
   def test_check_player_name()
     new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
     assert_equal(true, new_team.check_player_name?("Stacey"))
+    assert_equal(false, new_team.check_player_name?("Daniel"))
+    
   end
 
 
