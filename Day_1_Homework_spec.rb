@@ -9,5 +9,11 @@ class TestStudent < MiniTest::Test
   end
 
 
-
+  def test_setters()
+    new_student = Student.new("Stacey", 14)
+    new_student.change_name("Chris")
+    new_student.change_cohort(13)
+    assert_equal("Chris", new_student.student_name)
+    assert_equal(13, new_student.cohort_number)
+  end
 end
