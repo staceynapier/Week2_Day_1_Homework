@@ -31,6 +31,9 @@ class Student
 end 
 
 
+
+
+
 class Team 
 
   attr_accessor :coach, :points
@@ -57,6 +60,11 @@ class Team
   end
 end
 
+
+
+
+
+
 class Library
 
   attr_accessor :books
@@ -66,7 +74,7 @@ class Library
 
   end
 
-#will return all books if no book to find is given
+#will return all books, if no book to find is given
   def get_all_or_find_book(find_book = false)
     book_str = ''
     specific_book = @books
