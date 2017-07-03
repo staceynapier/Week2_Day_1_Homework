@@ -80,6 +80,10 @@ class Library
     return book_str
   end
 
+  def find_book(title)
+    @books.each{|book| return book if book[:title] == title}
+  end
+
   def add_new_book(title)
     @books <<     {
       title: title, 
@@ -88,6 +92,9 @@ class Library
         date: ""
       }
     }
+  end
+
+  def change_rental(title)
   end
 
 end
