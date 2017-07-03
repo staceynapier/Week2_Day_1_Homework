@@ -64,11 +64,13 @@ class Library
 
   end
 
-  def get_all()
+  def get_all_or_find_book(find_book = false)
     book_str = ''
-    @books.each do |book|
-      book_str += book[:title] + " loaned to #{book[:rental_details][:student_name]} on #{book[:rental_details][:date]}." 
+    specific_book = @books
+    specific_book = @books.select{|book| book if book == find_book} if find_book 
 
+    specific_book.each do |book|
+      book_str += book[:title] + " loaned to #{book[:rental_details][:student_name]} on #{book[:rental_details][:date]}." 
     end
     return book_str
   end
