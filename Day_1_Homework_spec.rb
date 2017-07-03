@@ -44,7 +44,7 @@ class TestStudent < MiniTest::Test
   def test_add_new_player()
     new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
     new_team.add_new_player("Tracy")
-    assert_equal(["Chris", "Stacey"])
+    assert_equal(["Chris", "Stacey", "Tracy"], new_team.players)
 
   end
 

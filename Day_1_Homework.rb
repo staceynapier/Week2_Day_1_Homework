@@ -42,6 +42,10 @@ class Team
     @coach = coach
   end
 
+  def add_new_player(name)
+    players << name
+    p players
+  end
 
 
 end
