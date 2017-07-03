@@ -30,7 +30,10 @@ class TestStudent < MiniTest::Test
 
   end
 
-
+  def test_team()
+    new_team = Team.new("Cohort 14", ["Chris", "Stacey"], "Keith")
+    assert_equal("Cohort 14", new_team.get_team_name())
+  end
 
 
 
