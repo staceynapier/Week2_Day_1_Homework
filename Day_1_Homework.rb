@@ -46,6 +46,8 @@ class Team
     @players.push(player)
   end
 
-
+  def check_player_name?(name)
+    @players.each{|person| return true if name == person}
+  end
 
 end
