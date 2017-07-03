@@ -64,11 +64,14 @@ class Library
 
   end
 
+#will return all books if no book to find is given
   def get_all_or_find_book(find_book = false)
     book_str = ''
     specific_book = @books
-    specific_book = @books.select{|book| book if book == find_book} if find_book 
+    #check if a specific book is given then save it to specific book
+    specific_book = @books.select{|book| book if book[:title] == find_book} if find_book 
 
+    #builds a string with book/books in hash
     specific_book.each do |book|
       book_str += book[:title] + " loaned to #{book[:rental_details][:student_name]} on #{book[:rental_details][:date]}." 
     end

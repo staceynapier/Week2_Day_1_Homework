@@ -91,4 +91,7 @@ class TestLibrary < MiniTest::Test
     assert_equal("the_hobbit loaned to Chris on 05/04/17.forgotten_world loaned to John on 06/07/94.", @new_library.get_all_or_find_book())
   end 
 
+  def test_get_all_or_find_book__if_find()
+    assert_equal("the_hobbit loaned to Chris on 05/04/17.", @new_library.get_all_or_find_book('the_hobbit'))
+  end
 end
