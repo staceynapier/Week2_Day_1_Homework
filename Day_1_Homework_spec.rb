@@ -69,7 +69,7 @@ end
 class TestLibrary < MiniTest::Test
 
   def setup
-    @new_library = Library.new([
+    @new_books = [
     {
       title: "the_hobbit", 
       rental_details: {
@@ -83,11 +83,14 @@ class TestLibrary < MiniTest::Test
         student_name: "John", 
         date: "06/07/94"
       }
-    }])
+    }]
 
+    @new_library = Library.new([])
+    @new_books.each{|book| @new_library.add_book_object(book)}
   end
 
   def test_get_all_or_find_book__if_all()
+    
     assert_equal(@new_library.books, @new_library.get_all_or_find_book())
   end 
 

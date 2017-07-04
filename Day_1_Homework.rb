@@ -77,7 +77,7 @@ class Library
 #will return all books, if no book to find is given
   def get_all_or_find_book(find_book = false)
     specific_book = @books
-    #check if a specific book is given then save it to specific book
+    #check if a specific book is given then return it else return all
     @books.select{|book| return book if book[:title] == find_book} if find_book 
 
     return specific_book
@@ -86,6 +86,11 @@ class Library
   def find_book(title)
     @books.each{|book| return book if book[:title] == title}
   end
+
+  def add_book_object(book_details)
+    @books << book_details
+  end
+
 
   def add_new_book(title)
     @books <<     {
